@@ -1,0 +1,134 @@
+/* Style général du conteneur */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Style du header */
+.header {
+  background: linear-gradient(270deg, rgba(238, 137, 221, 0.5), rgba(17, 18, 19, 0.5), rgba(151, 148, 146, 0.5));
+  background-size: 400% 400%;
+  color: white;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: transparentBackground 8s ease-in-out infinite;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Container centralisé pour le header */
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 20px;
+}
+
+/* Logo et navigation */
+.logo-nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  
+}
+
+.logo-img {
+  width: 200px; /* Réduire la largeur à 60px */
+  height: auto;
+}
+
+.nav-links {
+  display: flex;
+  gap: 15px;
+  text-align: center;
+  
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 15px;
+  border-radius: 20px;
+  transition: background-color 0.3s;
+  
+}
+
+.nav-links a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Barre de recherche et boutons */
+.search-and-buttons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.search-bar input {
+  padding: 8px 12px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  width: 180px;
+  transition: width 0.4s;
+}
+
+.search-bar input:focus {
+  width: 230px;
+}
+
+/* Boutons "Sign In" et "Sign Up" */
+.nav-right {
+  display: flex;
+  gap: 10px;
+  color: white;
+
+}
+.nav-right a {
+  color: white;
+  
+}
+
+.btn {
+  padding: 8px 15px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  border: 1px solid white;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.sign-in:hover {
+  color: white;
+}
+
+.sign-up:hover {
+  
+  color: white;
+}
+
+/* Animation du fond */
+@keyframes transparentBackground {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
