@@ -3,6 +3,7 @@ from dotenv import load_dotenv
 import os
 import sys
 
+#with python when running the project the files hiearchie is not recognizable
 # Add the root directory to Python's module search path
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../..")))
 
@@ -85,6 +86,7 @@ def withdraw_funds(amount_in_ether):
         error_logger.error(f"Error in withdraw_funds: {e}")
 
 # Example calls
+#the functions are tested and verifie din etherscan 
 if __name__ == "__main__":
     check_balance()
     #send_payment(0.01)  # Uncomment to send 0.01 ETH to the contract
