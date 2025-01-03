@@ -1,0 +1,183 @@
+
+  /* Contenu principal */
+.content {
+  padding: 20px;
+  text-align: center; 
+  margin-right: 50%;
+  margin-top:6% ;
+  font-size: 20px;
+
+}
+/* Style pour le titre */
+.styled-h2 {
+  font-size: 42px;             /* Taille de police plus grande pour le titre */
+  font-weight: bold;           /* Texte en gras */
+  color: #8A2BE2;              /* Couleur pourpre pour le titre */
+  text-align: center;          /* Centrer le titre */
+  margin-top: 10px;         /* Espacement en bas du titre */
+  letter-spacing: 1px;         /* Espacement entre les lettres */
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2); /* Ombre pour donner du relief */
+}
+
+.styled-paragraph {
+  font-family:serif; /* Police moderne et élégante */
+  font-weight: 600;                     /* Texte semi-gras pour un style raffiné */
+  font-size: 20px;                      /* Taille de police légèrement plus grande */
+  line-height: 1.75;                    /* Hauteur de ligne légèrement ajustée pour une meilleure lecture */
+  color: #4A4A4A;                       /* Couleur gris foncé pour un contraste doux */
+  margin-bottom: 25px;                  /* Espace en dessous légèrement augmenté */
+  text-align: justify;                  /* Justification pour un alignement parfait */
+  max-width: 750px;                     /* Largeur maximale ajustée pour une meilleure lisibilité */
+  margin: 0 auto;                       /* Centrer le paragraphe */
+  padding: 10px 20px;                   /* Ajouter un peu de padding pour aérer */
+  border-left: 5px solid #8A2BE2;       /* Bordure à gauche pour un effet visuel distinct */
+  background-color: #f8f8f8;            /* Fond gris clair pour une touche douce */
+  box-shadow: 0 4px 10px rgba(236, 8, 8, 0.5); /* Légère ombre pour un effet de relief */
+  border-radius: 8px;                   /* Coins arrondis pour un effet moderne */
+}
+
+/* Crypto List */
+.crypto-list {
+  max-width: 400px;
+  margin: auto;
+  background: linear-gradient(270deg, rgba(151, 148, 146, 0.5),  rgba(151, 148, 146, 0.5), rgba(151, 148, 146, 0.5));
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(236, 8, 8, 0.5);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: 16px;
+  color: #8c69ad;;
+  margin-bottom: 15px;
+ 
+ 
+}
+
+.crypto-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #333;
+}
+
+.crypto-item:last-child {
+  border-bottom: none;
+}
+
+.crypto-name {
+  display: flex;
+  align-items: center;
+}
+
+.crypto-name img {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+.crypto-price {
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.crypto-change {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.crypto-change.positive {
+  color: #4caf50; /* Vert pour les changements positifs */
+}
+
+.crypto-change.negative {
+  color: #f44336; /* Rouge pour les changements négatifs */
+}
+
+/* Hover Effects */
+.crypto-price,
+.crypto-change {
+  transition: color 0.3s, transform 0.3s;
+}
+
+.crypto-price:hover,
+.crypto-change:hover {
+  color: #8A2BE2; /* Jaune sur hover */
+  transform: scale(1.1);
+}
+
+.faq-container {
+  
+  max-width: 1000px;
+  margin: auto;
+  background: linear-gradient(270deg, rgba(151, 148, 146, 0.5),  rgba(151, 148, 146, 0.5), rgba(151, 148, 146, 0.5));
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(236, 8, 8, 0.5);
+}
+
+h1 {
+  text-align: center;
+  font-size: 28px; /* Taille de titre augmentée */
+  margin-bottom: 30px; /* Espacement plus grand */
+  color: #ffffff;
+}
+
+.faq-item {
+  margin-bottom: 20px; /* Espacement plus grand entre les questions */
+}
+
+.faq-question {
+  background-color: #323248;
+  padding: 15px;
+  cursor: pointer;
+  font-size: 20px; /* Taille de police augmentée */
+  color: #ffffff;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  width: 90%; /* Prend toute la largeur du conteneur */
+  text-align: left;
+}
+
+.faq-question:hover {
+  background-color: #3d3d57;
+}
+
+.faq-answer {
+  margin-top: 15px;
+  background-color: #2d2d44;
+  padding: 15px;
+  border-radius: 5px;
+  font-size: 16px; /* Taille de police augmentée */
+  color: #bdbdbd;
+  line-height: 1.5; /* Plus d'espacement entre les lignes */
+}
+
+details[open] .faq-answer {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Style du pied de page */
+
+.footer {
+  background: linear-gradient(270deg, rgba(238, 137, 221, 0.5), rgba(17, 18, 19, 0.5), rgba(151, 148, 146, 0.5));
+  color: white;
+  text-align: center;
+  padding: 15px;
+  width: 97,5%;
+  margin-top: 50px; /* Ajoute un espacement entre le contenu principal et le footer */
+}
