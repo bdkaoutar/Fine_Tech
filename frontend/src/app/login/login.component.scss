@@ -18,6 +18,7 @@ body {
 h1 {
   font-weight: bold;
   margin: 0;
+  color: #381e49; /* Dark purple for the heading */
 }
 
 h2 {
@@ -30,6 +31,7 @@ p {
   line-height: 20px;
   letter-spacing: 0.5px;
   margin: 20px 0 30px;
+  color: #7f578a; /* Light purple for paragraph text */
 }
 
 span {
@@ -37,7 +39,7 @@ span {
 }
 
 a {
-  color: #333;
+  color: #6abee8; /* Light blue for links */
   font-size: 14px;
   text-decoration: none;
   margin: 15px 0;
@@ -45,8 +47,8 @@ a {
 
 button {
   border-radius: 20px;
-  border: 1px solid #001f3f;
-  background-color: #001f3f ;
+  border: 1px solid #381e49; /* Dark purple border */
+  background-color: #381e49; /* Dark purple background */
   color: #ffffff;
   font-size: 12px;
   font-weight: bold;
@@ -67,6 +69,10 @@ button:focus {
 button.ghost {
   background-color: transparent;
   border-color: #ffffff;
+}
+.white-bold-text {
+  font-weight: bold;
+  color: #ffffff; /* White color */
 }
 
 form {
@@ -160,9 +166,9 @@ input {
 }
 
 .overlay {
-  background:#001f3f ;
-  background: -webkit-linear-gradient(to right, #001f3f, #0074d9);
-  background: linear-gradient(to right, #001f3f, #0074d9); /* Navy blue to a lighter blue */
+  background: #381e49; /* Dark purple background */
+  background: -webkit-linear-gradient(to right, #381e49, #6abee8); /* Dark purple to light blue gradient */
+  background: linear-gradient(to right, #381e49, #6abee8);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0 0;
@@ -243,10 +249,10 @@ footer p {
 }
 
 footer i {
-  color: #001f3f;
+  color: #381e49; /* Dark purple for icons */
 }
 
 footer a {
-  color: #3c97bf;
+  color: #60c7f6; /* Light blue for footer links */
   text-decoration: none;
 }
