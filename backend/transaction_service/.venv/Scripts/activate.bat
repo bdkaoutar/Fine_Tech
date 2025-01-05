@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set VIRTUAL_ENV=C:\Users\HP\PycharmProjects\transaction_service\.venv
+set VIRTUAL_ENV=C:\Users\HP\projet_python\Fine_Tech\backend\transaction_service\.venv
 
 if not defined PROMPT set PROMPT=$P$G
 
