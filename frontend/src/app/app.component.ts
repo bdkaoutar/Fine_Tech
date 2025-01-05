@@ -3,12 +3,10 @@ import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-  host: { 'ngSkipHydration': 'true' },
   standalone: true,
-  imports: [RouterOutlet]
+  imports: [RouterOutlet],
+  templateUrl: './app.component.html',
 })
 export class AppComponent {
-  title = 'maprojet';
+  title = 'Modernize Angular Admin Tempplate';
 }

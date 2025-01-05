@@ -952,6 +952,38 @@ const client = new Client("http://example.com").compose(
 );
 ```
 
+##### `dump`
+
+The `dump` interceptor enables you to dump the response body from a request upon a given limit.
+
+**Options**
+- `maxSize` - The maximum size (in bytes) of the response body to dump. If the size of the request's body exceeds this value then the connection will be closed. Default: `1048576`.
+
+> The `Dispatcher#options` also gets extended with the options `dumpMaxSize`, `abortOnDumped`, and `waitForTrailers` which can be used to configure the interceptor at a request-per-request basis.
+
+**Example - Basic Dump Interceptor**
+
+```js
+const { Client, interceptors } = require("undici");
+const { dump } = interceptors;
+
+const client = new Client("http://example.com").compose(
+  dump({
+    maxSize: 1024,
+  })
+);
+
+// or 
+client.dispatch(
+  {
+    path: "/",
+    method: "GET",
+    dumpMaxSize: 1024,
+  },
+  handler
+);
+```
+
 ## Instance Events
 
 ### Event: `'connect'`
@@ -968,6 +1000,12 @@ Parameters:
 * **origin** `URL`
 * **targets** `Array<Dispatcher>`
 * **error** `Error`
+
+Emitted when the dispatcher has been disconnected from the origin.
+
+> **Note**: For HTTP/2, this event is also emitted when the dispatcher has received the [GOAWAY Frame](https://webconcepts.info/concepts/http2-frame-type/0x7) with an Error with the message `HTTP/2: "GOAWAY" frame received` and the code `UND_ERR_INFO`.
+> Due to nature of the protocol of using binary frames, it is possible that requests gets hanging as a frame can be received between the `HEADER` and `DATA` frames.
+> It is recommended to handle this event and close the dispatcher to create a new HTTP/2 session.
 
 ### Event: `'connectionError'`
 

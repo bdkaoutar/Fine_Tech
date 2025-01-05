@@ -1,0 +1,86 @@
+<mat-card class="cardWithShadow theme-card">
+  <mat-card-header>
+    <mat-card-title>Add User</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <!-- Name -->
+        <div class="col-lg-6">
+          <mat-label>Your Name</mat-label>
+          <mat-form-field appearance="outline" class="w-100">
+            <input matInput placeholder="Your name" formControlName="name" />
+            <mat-error *ngIf="userForm.get('name')?.invalid && userForm.get('name')?.touched">
+              Name is required.
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <!-- Email -->
+        <div class="col-lg-6">
+          <mat-label>Email</mat-label>
+          <mat-form-field appearance="outline" class="w-100">
+            <input matInput placeholder="Your email" formControlName="email" />
+            <mat-error *ngIf="userForm.get('email')?.invalid && userForm.get('email')?.touched">
+              Valid email is required.
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <!-- Password -->
+        <div class="col-lg-6">
+          <mat-label>Password</mat-label>
+          <mat-form-field appearance="outline" class="w-100">
+            <input matInput type="password" placeholder="Your password" formControlName="password" />
+            <mat-error *ngIf="userForm.get('password')?.invalid && userForm.get('password')?.touched">
+              Password is required.
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <!-- Country -->
+        <div class="col-lg-6">
+          <mat-label>Country</mat-label>
+          <mat-form-field appearance="outline" class="w-100">
+            <mat-select formControlName="country">
+              <mat-option *ngFor="let option of countries" [value]="option.value">
+                {{ option.viewValue }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <!-- State -->
+        <div class="col-lg-6">
+          <mat-label>State</mat-label>
+          <mat-form-field appearance="outline" class="w-100">
+            <mat-select formControlName="state">
+              <mat-option *ngFor="let option of states" [value]="option.value">
+                {{ option.viewValue }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <!-- City -->
+        <div class="col-lg-6">
+          <mat-label>City</mat-label>
+          <mat-form-field appearance="outline" class="w-100">
+            <mat-select formControlName="city">
+              <mat-option *ngFor="let option of cities" [value]="option.value">
+                {{ option.viewValue }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="m-t-12">
+        <button mat-flat-button color="primary" type="submit" [disabled]="userForm.invalid">
+          Submit
+        </button>
+        <button mat-stroked-button color="warn" type="button">Cancel</button>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>
