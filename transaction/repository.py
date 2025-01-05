@@ -3,7 +3,7 @@ from typing import List, Optional
 from sqlmodel import select
 from sqlmodel.ext.asyncio.session import AsyncSession
 
-from transaction.model import Transaction
+from Fine_Tech.backend.transaction_service.transaction.model import Transaction
 
 
 class TransactionRepository:
@@ -27,20 +27,14 @@ class TransactionRepository:
         return result.scalars().all()
 
     @staticmethod
-    async def update_transaction(session: AsyncSession, transaction_id: int, updates: dict) -> Transaction:
-        """Mettre à jour une transaction et gérer les erreurs."""
+    async def update_transaction(session: AsyncSession, transaction_id: int, updates: dict) -> Optional[Transaction]:
+        """Update an existing transaction with the given updates."""
         transaction = await session.get(Transaction, transaction_id)
-        if not transaction:
-            raise HTTPException(status_code=404, detail="Transaction not found.")
-
-        # Appliquer les mises à jour
-        for key, value in updates.items():
-            setattr(transaction, key, value)
-
-        # Commit des changements dans la base de données
-        await session.commit()
-        await session.refresh(transaction)
-
+        if transaction:
+            for key, value in updates.items():
+                setattr(transaction, key, value)
+            await session.commit()
+            await session.refresh(transaction)
         return transaction
 
     @staticmethod
