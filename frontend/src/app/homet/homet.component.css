@@ -1,0 +1,296 @@
+/* Contenu principal */
+.content {
+  padding: 20px;
+  text-align: center;
+  margin-right: 50%;
+  margin-top: 6%;
+  font-size: 20px;
+}
+
+/* Style pour le titre */
+.styled-h2 {
+  font-size: 42px;
+  font-weight: bold;
+  color: #381e49; /* Dark purple for the title */
+  text-align: center;
+  margin-top: 10px;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.styled-paragraph {
+  font-family: serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.75;
+  color: #4A4A4A;
+  margin-bottom: 25px;
+  text-align: justify;
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  border-left: 5px solid #381e49; /* Dark purple */
+  background-color: #f8f8f8;
+  box-shadow: 0 4px 10px rgba(236, 8, 8, 0.5);
+  border-radius: 8px;
+}
+
+/* Crypto List */
+.crypto-list {
+  max-width: 400px;
+  margin: auto;
+  background: linear-gradient(270deg, #381e49, #6abee8); /* Dark purple mixed with light blue */
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(236, 8, 8, 0.5);
+}
+
+/* Crypto Item */
+.crypto-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #333;
+}
+
+.crypto-item:last-child {
+  border-bottom: none;
+}
+
+/* Crypto Name */
+.crypto-name {
+  display: flex;
+  align-items: center;
+}
+
+.crypto-name img {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+/* Crypto Price */
+.crypto-price {
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+/* Crypto Change */
+.crypto-change {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.crypto-change.positive {
+  color: #4caf50; /* Green for positive change */
+}
+
+.crypto-change.negative {
+  color: #f44336; /* Red for negative change */
+}
+
+/* Hover Effects */
+.crypto-price,
+.crypto-change {
+  transition: color 0.3s, transform 0.3s;
+}
+
+.crypto-price:hover,
+.crypto-change:hover {
+  color: #6abee8; /* Light blue on hover */
+  transform: scale(1.1);
+}
+
+.faq-container {
+  margin-top: 6%;
+  margin-left: 2%;
+  max-width: 1000px;
+  margin: auto;
+  background: linear-gradient(270deg, #381e49, #6abee8); /* Dark purple mixed with light blue */
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+h1 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: #ffffff;
+}
+
+.faq-item {
+  margin-bottom: 20px;
+}
+
+.faq-question {
+  background-color: #381e49; /* Dark purple */
+  padding: 15px;
+  cursor: pointer;
+  font-size: 20px;
+  color: #ffffff;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  width: 90%;
+  text-align: left;
+}
+
+.faq-question:hover {
+  background-color: #6abee8; /* Light blue on hover */
+}
+
+.faq-answer {
+  margin-top: 15px;
+  background-color: #2d2d44;
+  padding: 15px;
+  border-radius: 5px;
+  font-size: 18px;
+  color: #bdbdbd;
+  line-height: 1.5;
+}
+
+details[open] .faq-answer {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.btn {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* Style du header */
+.header {
+  background: linear-gradient(270deg, #381e49, #6abee8); /* Dark purple mixed with light blue */
+  color: white;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: transparentBackground 8s ease-in-out infinite;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Container centralisé pour le header */
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.logo-nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  width: 200px;
+  height: auto;
+}
+
+.nav-links {
+  display: flex;
+  gap: 15px;
+  text-align: center;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 15px;
+  border-radius: 20px;
+  transition: background-color 0.3s;
+}
+
+.nav-links a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.search-and-buttons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.search-bar input {
+  padding: 8px 12px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  width: 180px;
+  transition: width 0.4s;
+}
+
+.search-bar input:focus {
+  width: 230px;
+}
+
+.nav-right {
+  display: flex;
+  gap: 10px;
+  color: white;
+}
+
+.nav-right a {
+  color: white;
+}
+
+.btn {
+  padding: 8px 15px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  border: 1px solid white;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.sign-in:hover {
+  color: white;
+}
+
+.sign-up:hover {
+  color: white;
+}
+
+/* Animation du fond */
+@keyframes transparentBackground {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Style du pied de page */
+.footer {
+  background: linear-gradient(270deg, #381e49, #6abee8); /* Dark purple mixed with light blue */
+  color: white;
+  text-align: center;
+  padding: 15px;
+  width: 97.5%;
+  margin-top: 50px;
+}

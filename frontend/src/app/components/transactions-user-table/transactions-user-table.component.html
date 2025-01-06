@@ -1,0 +1,62 @@
+<mat-card class="cardWithShadow">
+  <mat-card-content>
+    <mat-card-title>Transaction Table</mat-card-title>
+    <div class="table-responsive">
+      <table mat-table [dataSource]="dataSource" class="w-100 mat-elevation-z8">
+
+        <!-- From Account Column -->
+        <ng-container matColumnDef="fromAccount">
+          <th mat-header-cell *matHeaderCellDef>From Account</th>
+          <td mat-cell *matCellDef="let element">{{ element.fromAccount }}</td>
+        </ng-container>
+
+        <!-- To Account Column -->
+        <ng-container matColumnDef="toAccount">
+          <th mat-header-cell *matHeaderCellDef>To Account</th>
+          <td mat-cell *matCellDef="let element">{{ element.toAccount }}</td>
+        </ng-container>
+
+        <!-- Amount Column -->
+        <ng-container matColumnDef="amount">
+          <th mat-header-cell *matHeaderCellDef>Amount</th>
+          <td mat-cell *matCellDef="let element">${{ element.amount | number }}</td>
+        </ng-container>
+
+        <!-- Date Column -->
+        <ng-container matColumnDef="date">
+          <th mat-header-cell *matHeaderCellDef>Date</th>
+          <td mat-cell *matCellDef="let element">{{ element.date }}</td>
+        </ng-container>
+
+        <!-- Status Column -->
+        <ng-container matColumnDef="status">
+          <th mat-header-cell *matHeaderCellDef>Status</th>
+          <td mat-cell *matCellDef="let element">
+            <span
+              [ngClass]="{
+                'text-success': element.status === 'success',
+                'text-danger': element.status === 'failed'
+              }"
+            >
+              {{ element.status | titlecase }}
+            </span>
+          </td>
+        </ng-container>
+
+        <!-- Actions Column -->
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef>Actions</th>
+          <td mat-cell *matCellDef="let element">
+            <button mat-flat-button color="primary" (click)="viewDetails(element.id)">
+              View Details
+            </button>
+          </td>
+        </ng-container>
+
+        <!-- Header and Row Definitions -->
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+    </div>
+  </mat-card-content>
+</mat-card>
