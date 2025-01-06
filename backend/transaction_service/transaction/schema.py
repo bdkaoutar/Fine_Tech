@@ -7,6 +7,8 @@ from typing import Optional
 class TransactionCreate(BaseModel):
     sender_wallet_id: int
     receiver_wallet_id: int
+    sender_user_id: int
+    receiver_user_id: int
     amount: float
     description: Optional[str] = None
 
