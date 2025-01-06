@@ -1,0 +1,8 @@
+2025-01-06 14:10:12,532 - ERROR - Error in send_payment: {'code': -32000, 'message': 'already known'}
+2025-01-06 14:16:30,591 - ERROR - Error in send_payment: {'code': -32000, 'message': 'already known'}
+2025-01-06 14:18:37,092 - ERROR - Error in send_payment: {'code': -32000, 'message': 'already known'}
+2025-01-06 14:37:46,278 - ERROR - Error in send_payment: {'code': -32000, 'message': 'failed with 200000 gas: max fee per gas less than block base fee: address 0x93d229F26e630c141Ad01f102c7B5879e3898FC5, maxFeePerGas: 10000000000, baseFee: 53674016102'}
+2025-01-06 14:40:14,965 - ERROR - Error in send_payment: 'Eth' object has no attribute 'waitForTransactionReceipt'
+2025-01-06 14:50:02,222 - ERROR - Error in send_payment: {'code': -32000, 'message': 'replacement transaction underpriced'}
+2025-01-06 15:11:11,795 - ERROR - Error in send_payment: {'code': -32000, 'message': 'replacement transaction underpriced'}
+2025-01-06 15:14:54,413 - ERROR - Error in send_payment: {'code': -32000, 'message': 'replacement transaction underpriced'}
