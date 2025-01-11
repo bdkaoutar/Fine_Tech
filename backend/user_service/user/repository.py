@@ -1,9 +1,8 @@
-
-from datetime import datetime
-from pydantic import EmailStr
-from typing import List, Optional
-from sqlmodel import select, SQLModel
 from sqlalchemy.ext.asyncio import AsyncSession
+from sqlalchemy.future import select
+from sqlalchemy.orm import joinedload
+from datetime import datetime
+from typing import List, Optional
 from user.model import User, Wallet
 
 class UserRepository:
@@ -22,30 +21,36 @@ class UserRepository:
         result = await self.session.execute(select(User).where(User.username == username))
         return result.scalars().first()
 
-    async def get_user_by_email(self, email: EmailStr) -> Optional[User]:
+    async def get_user_by_email(self, email: str) -> Optional[User]:
         """Fetch a user by their EMAIL."""
         result = await self.session.execute(select(User).where(User.email == email))
         return result.scalars().first()
 
     async def get_all_users(self) -> List[User]:
-        """Fetch all users."""
-        result = await self.session.execute(select(User))
-        return result.scalars().all()
+        """Fetch all users with wallets eagerly loaded."""
+        result = await self.session.execute(
+            select(User).options(joinedload(User.wallets))
+        )
+        return result.scalars().unique().all()  # Ensure unique rows
 
     async def update_user(self, username: str, updates: dict) -> Optional[User]:
         """Update an existing user with the given updates."""
-        user = await self.session.get(User, username)
+        result = await self.session.execute(select(User).where(User.username == username))
+        user = result.scalars().first()
+
         if user:
             for key, value in updates.items():
                 setattr(user, key, value)
             user.updated_at = datetime.utcnow()
             await self.session.commit()
-            await self.session.refresh(user)
+            await self.session.refresh(user)  # Ensure we get the latest values from the database
         return user
 
     async def delete_user(self, username: str) -> bool:
         """Delete a user by their ID."""
-        user = await self.session.get(User, username)
+        result = await self.session.execute(select(User).where(User.username == username))
+        user = result.scalars().first()
+
         if user:
             await self.session.delete(user)
             await self.session.commit()
@@ -59,7 +64,7 @@ class WalletRepository:
     async def create_wallet(self, wallet: Wallet) -> Wallet:
         """Create a new wallet."""
         self.session.add(wallet)
-        await self.session.commit()
+        await self.session.commit()  # Ensure commit is called
         await self.session.refresh(wallet)
         return wallet
 
