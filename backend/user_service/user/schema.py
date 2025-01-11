@@ -33,18 +33,17 @@ class UserBase(BaseModel):
 
 
 # Schema for creating a new user
-class UserCreate(UserBase):
-    password: str
-
+class UserCreate(BaseModel):
+    full_name: str
+    email: EmailStr
+    password: str  # Users provide these three fields
 
 # Schema for user data in the database
 class UserInDB(UserBase):
     hashed_password: str
 
-
 # Schema for updating user profile
 class UserUpdateProfile(BaseModel):
-    username: Optional[str] = None  # Allow updating username
     email: Optional[EmailStr] = None  # Allow updating email
     full_name: Optional[str] = None  # Optional full name update
     password: Optional[str] = None  # Allow updating password
@@ -61,13 +60,13 @@ class UserUpdate(BaseModel):
 # Schema for creating a wallet
 class WalletCreate(BaseModel):
     currency: str
-    balance: int = 0
+    balance: int = 1000
 
 
 # Schema for reading wallet data
 class WalletRead(BaseModel):
     wallet_id: int
-    username: str  # Replaced `user_id` with `username` for consistency
+    username: str
     currency: str
     balance: int
     created_at: datetime
@@ -75,11 +74,10 @@ class WalletRead(BaseModel):
 
 # Schema for reading user data
 class UserRead(BaseModel):
-    user_id: Optional[int]
+    username: str
     full_name: str
     email: EmailStr
     created_at: datetime
     updated_at: datetime
-    wallets: Optional[list[WalletRead]] = None
     role: RoleEnum
-    disabled: Optional[bool] = None
+    disabled: bool  # Ensure this field is always included in the response

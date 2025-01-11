@@ -7,7 +7,7 @@ class Wallet(SQLModel, table=True):
     wallet_id: Optional[int] = Field(default=None, primary_key=True)
     username: str = Field(foreign_key="user.username", nullable=False)  # Foreign key to username
     currency: str = Field(nullable=False)  # e.g., "USD", "BTC", "ETH"
-    balance: int = Field(default=0)
+    balance: int = Field(default=1000)
     created_at: datetime = Field(default_factory=datetime.utcnow)
 
     owner: Optional["User"] = Relationship(back_populates="wallets")
@@ -21,5 +21,6 @@ class User(SQLModel, table=True):
     role: str = Field(default="user")  # Added role with default value "user"
     created_at: datetime = Field(default_factory=datetime.utcnow)
     updated_at: datetime = Field(default_factory=datetime.utcnow)
+    disabled: bool = Field(default=False)
 
     wallets: List[Wallet] = Relationship(back_populates="owner")
