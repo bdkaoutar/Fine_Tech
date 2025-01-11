@@ -1,10 +1,12 @@
 /* Contenu principal */
 .content {
-  padding: 20px;
-  text-align: center;
-  margin-right: 50%;
+  display: flex; /* Align elements horizontally */
+  justify-content: space-between; /* Space between description and crypto-list */
+  align-items: center; /* Align items vertically */
   margin-top: 6%;
+  padding: 20px;
   font-size: 20px;
+  gap: 20px; /* Add space between elements */
 }
 
 /* Style pour le titre */
@@ -35,10 +37,16 @@
   border-radius: 8px;
 }
 
+.description {
+  flex: 2; /* Take more space compared to crypto-list */
+  text-align: left; /* Align text to the left */
+  margin: 0;
+  padding: 10px;
+}
 /* Crypto List */
 .crypto-list {
+  flex: 1; /* Take less space compared to description */
   max-width: 400px;
-  margin: auto;
   background: linear-gradient(270deg, #381e49, #6abee8); /* Dark purple mixed with light blue */
   border-radius: 8px;
   padding: 20px;
