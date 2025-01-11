@@ -1,0 +1,26 @@
+services:
+  postgres:
+    image: postgres:17
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: SecureP@ssw0rd2025!
+      POSTGRES_DB: FinTechSphere
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  user-service:
+    build:
+      context: .
+      dockerfile: user_service/Dockerfile
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres
+    environment:
+      DATABASE_URL: postgresql+asyncpg://postgres:SecureP@ssw0rd2025!@postgres:5432/FinTechSphere
+      USER_SERVICE_URL: http://blockchain_service:8001
+
+volumes:
+  postgres_data:
