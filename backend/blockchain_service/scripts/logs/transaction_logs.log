@@ -1,0 +1,33 @@
+2025-01-11 12:22:08,281 - INFO - Connected to Ethereum and contract initialized successfully.
+2025-01-11 12:42:00,833 - INFO - Connected to Ethereum and contract initialized successfully.
+2025-01-11 12:43:51,015 - INFO - Connected to Ethereum and contract initialized successfully.
+2025-01-11 12:44:16,053 - INFO - Connected to Ethereum and contract initialized successfully.
+2025-01-11 12:44:31,277 - INFO - BlockchainRepository initialized successfully.
+2025-01-11 12:44:32,350 - INFO - Balance retrieved successfully: ETH
+2025-01-11 12:46:10,396 - INFO - Connected to Ethereum and contract initialized successfully.
+2025-01-11 12:46:11,887 - INFO - BlockchainRepository initialized successfully.
+2025-01-11 12:46:13,034 - INFO - Balance retrieved successfully: 0.07 ETH
+2025-01-11 12:48:05,371 - INFO - BlockchainRepository initialized successfully.
+2025-01-11 12:48:06,550 - INFO - Balance retrieved successfully: 0.07 ETH
+2025-01-11 12:52:53,004 - INFO - Connected to Ethereum and contract initialized successfully.
+2025-01-11 12:53:59,641 - INFO - Connected to Ethereum and contract initialized successfully.
+2025-01-11 12:55:17,196 - INFO - Connected to Ethereum and contract initialized successfully.
+2025-01-11 12:55:56,065 - INFO - Connected to Ethereum and contract initialized successfully.
+2025-01-11 12:57:13,131 - INFO - Connected to Ethereum and contract initialized successfully.
+2025-01-11 12:58:33,042 - INFO - Connected to Ethereum and contract initialized successfully.
+2025-01-11 12:59:55,431 - INFO - Connected to Ethereum and contract initialized successfully.
+2025-01-11 13:04:33,421 - INFO - Connected to Ethereum and contract initialized successfully.
+2025-01-11 13:06:22,775 - INFO - Connected to Ethereum and contract initialized successfully.
+2025-01-11 13:06:59,522 - INFO - BlockchainRepository initialized successfully.
+2025-01-11 13:07:00,926 - INFO - Withdrawal transaction sent with hash: 0x9333715860d1c82ff319b8fbf7374b3e6d5d240668f072513f7cf2537855f8d8
+2025-01-11 13:07:59,669 - INFO - BlockchainRepository initialized successfully.
+2025-01-11 13:08:00,241 - INFO - Balance retrieved successfully: 0.07 ETH
+2025-01-11 13:10:24,559 - INFO - BlockchainRepository initialized successfully.
+2025-01-11 13:10:25,953 - INFO - Withdrawal transaction sent with hash: 0x7c6ef2f45cd1c3925ab08859a2624262609a3f30db16e2878d8bfadd56329fed
+2025-01-11 13:12:43,991 - INFO - BlockchainRepository initialized successfully.
+2025-01-11 13:12:45,021 - INFO - Balance retrieved successfully: 0.06 ETH
+2025-01-11 13:19:10,064 - INFO - Connected to Ethereum and contract initialized successfully.
+2025-01-11 13:19:32,781 - INFO - Connected to Ethereum and contract initialized successfully.
+2025-01-11 13:20:53,189 - INFO - Connected to Ethereum and contract initialized successfully.
+2025-01-11 13:21:00,552 - INFO - BlockchainRepository initialized successfully.
+2025-01-11 13:21:01,743 - INFO - Balance retrieved successfully: 0.06 ETH
