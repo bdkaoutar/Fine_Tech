@@ -33,30 +33,41 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
 
 
-async def get_current_user(token: str = Depends(oauth2_scheme)):
+async def get_current_user(
+    token: str = Depends(oauth2_scheme),
+    session: AsyncSession = Depends(get_session),
+):
     credentials_exception = HTTPException(
         status_code=status.HTTP_401_UNAUTHORIZED,
         detail="Could not validate credentials",
         headers={"WWW-Authenticate": "Bearer"},
     )
     try:
+        # Decode the JWT token
         payload = jwt.decode(token, Config.SECRET_KEY, algorithms=[Config.ALGORITHM])
         username: str = payload.get("sub")
-        is_disabled: bool = payload.get("disabled", False)
-        if username is None or is_disabled:
+        if username is None:
             raise credentials_exception
     except JWTError:
         raise credentials_exception
 
-    return TokenData(username=username)
+    # Fetch the user from the database
+    result = await session.execute(select(User).where(User.username == username))
+    user = result.scalars().first()
+
+    if user is None:
+        raise credentials_exception
+    return user
 
 
 # Ensure the user is active and not disabled
-async def get_current_active_user(current_user: User = Depends(get_current_user)):
+async def get_current_active_user(
+    current_user: User = Depends(get_current_user),
+):
     if current_user.disabled:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
             detail="User account is disabled",
-            headers={"WWW-Authenticate": "Bearer"}
+            headers={"WWW-Authenticate": "Bearer"},
         )
     return current_user
