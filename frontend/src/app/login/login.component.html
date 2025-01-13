@@ -1,6 +1,7 @@
 <!-- login.component.html -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
   <!-- Add Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
+
 <body>
   <div class="container" #container>
     <!-- Sign Up Form -->
@@ -23,7 +25,7 @@
         <input type="text" placeholder="Name" />
         <input type="email" placeholder="Email" />
         <input type="password" placeholder="Password" />
-        <button >Sign Up</button>
+        <button (click)="signUp()">Sign Up</button>
       </form>
     </div>
 
@@ -40,7 +42,7 @@
         <input type="email" placeholder="Email" />
         <input type="password" placeholder="Password" />
         <a href="#">Forgot your password?</a>
-        <button (click)="signIn()" >Sign In</button>
+        <button (click)="signIn()">Sign In</button>
       </form>
     </div>
 
@@ -49,13 +51,15 @@
       <div class="overlay">
         <div class="overlay-panel overlay-left">
           <h1 class="white-bold-text">Welcome Back!</h1>
-          <p class="white-bold-text">Securely access your financial services and manage your transactions, whether traditional or blockchain-based, in a decentralized ecosystem.</p>
-              <button class="ghost" (click)="signIn()">Sign In</button>
+          <p class="white-bold-text">Securely access your financial services and manage your transactions, whether
+            traditional or blockchain-based, in a decentralized ecosystem.</p>
+          <button class="ghost" (click)="signIn()">Sign In</button>
         </div>
         <div class="overlay-panel overlay-right">
           <h1>Create Your FinTech Account</h1>
-          <p style="font-weight: bold; color: #381e49;">Join our decentralized financial platform, enabling seamless interaction with blockchain and traditional financial systems.</p>
-          <button  class="ghost" (click)="signUp()">Sign Up</button>
+          <p style="font-weight: bold; color: #381e49;">Join our decentralized financial platform, enabling seamless
+            interaction with blockchain and traditional financial systems.</p>
+          <button class="ghost" (click)="signUp()">Sign Up</button>
           <div class="mt-4">
             <i class="fab fa-bitcoin" style="color: gold; font-size: 50px;"></i>
           </div>
@@ -64,9 +68,11 @@
     </div>
 
     <!-- Back to Home Button -->
-    <a routerLink="/" class="back-to-home" style="position: absolute; top: 20px; left: 20px; color: #333; text-decoration: none;">
+    <a routerLink="/" class="back-to-home"
+      style="position: absolute; top: 20px; left: 20px; color: #333; text-decoration: none;">
       <i class="fas fa-arrow-left"></i> Back to Home
     </a>
   </div>
 </body>
+
 </html>

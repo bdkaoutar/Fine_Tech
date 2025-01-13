@@ -14,16 +14,21 @@ export class LoginComponent {
   @ViewChild('container')
   container!: ElementRef;
 
-  constructor(private router:Router){
+  constructor(private router: Router) {
 
   }
 
   signIn() {
-    this.router.navigate(['/dashboard']);
-    //this.container.nativeElement.classList.remove('right-panel-active');
+    if (!this.container.nativeElement.classList.contains('right-panel-active')) {
+      window.location.href = '/dashboard'
+    }
+    this.container.nativeElement.classList.remove('right-panel-active');
   }
 
   signUp() {
+    if (this.container.nativeElement.classList.contains('right-panel-active')) {
+      window.location.href = '/dashboard'
+    }
     this.container.nativeElement.classList.add('right-panel-active');
   }
 }
