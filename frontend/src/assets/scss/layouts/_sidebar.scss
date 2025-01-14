@@ -10,6 +10,13 @@
 .branding {
   padding: 13px 20px;
 }
+.branding img {
+  width: 150px; /* Adjust the size as needed */
+  height: auto; /* Maintain aspect ratio */
+  margin: 5px; /* Optional: Add some spacing */
+  object-fit: contain; /* Ensure the image fits within its container */
+  max-width: 100%; /* Make it responsive */
+}
 
 .sidebar-list {
   &.mdc-list {
