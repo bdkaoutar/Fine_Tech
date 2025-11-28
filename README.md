@@ -163,6 +163,3 @@ The *FinTech Crypto Application* demonstrates the potential of integrating micro
    - Backend: `http://localhost:8000/docs`
 
 ---
-
-## License
-This project is licensed under the MIT License.
